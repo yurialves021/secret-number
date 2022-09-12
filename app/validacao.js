@@ -17,6 +17,7 @@ function validaChute(chute) {
         document.body.innerHTML = `
         <h1> Parabéns, você acertou !!</h1>
         <h3> O número secreto era ${numeroSecreto}</h3>
+        <button id="jogar-novamente" class="btn-jogar">Jogar Novamente</button>
         `
     } else {
         dicasNumero(numero)
@@ -44,4 +45,8 @@ function dicasNumero(numero) {
     }
 }
 
-
+document.body.addEventListener('click', e =>{
+    if(e.target.id === 'jogar-novamente') {
+        window.location.reload()
+    }
+})
