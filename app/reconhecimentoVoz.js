@@ -13,6 +13,8 @@ function onSpeak(e) {
     const chute = e.results[0][0].transcript
 
     exibeChute(chute)
+    
+    validaChute(chute)
 }
 
 function exibeChute(chute) {
