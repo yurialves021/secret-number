@@ -45,6 +45,8 @@ function dicasNumero(numero) {
     }
 }
 
+
+//evento de click para reiniciar o jogo
 document.body.addEventListener('click', e =>{
     if(e.target.id === 'jogar-novamente') {
         window.location.reload()
