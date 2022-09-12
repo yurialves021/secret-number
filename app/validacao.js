@@ -1,5 +1,7 @@
 function validaChute(chute) {
 
+    verificaDesistencia(chute)
+
     const numero = +chute
 
     if (verificaNumero(numero)) {
@@ -45,10 +47,21 @@ function dicasNumero(numero) {
     }
 }
 
+function verificaDesistencia(chute) {
+
+    if (chute === 'game over') {
+        document.body.style.background = '#E94560'
+        document.body.innerHTML = `
+        <h1> GAME OVER !!</h1>
+        <h3> O número secreto era ${numeroSecreto}</h3>
+        <button id="jogar-novamente" class="btn-jogar">Jogar Novamente</button>
+        `
+    }
+}
 
 //evento de click para reiniciar o jogo
-document.body.addEventListener('click', e =>{
-    if(e.target.id === 'jogar-novamente') {
+document.body.addEventListener('click', e => {
+    if (e.target.id === 'jogar-novamente') {
         window.location.reload()
     }
 })
